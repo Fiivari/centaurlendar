@@ -4,5 +4,5 @@
   status = 200
   to = "/index.html"
 [build]
-  functions = "functions"
+  functions = "netlify/functions"
   included_files = ["./availableTimeSlots.json"]
