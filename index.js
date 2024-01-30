@@ -4,7 +4,7 @@ function updateCalendar() {
     const calendarDiv = document.getElementById('calendar');
 
     // Fetch availableTimeSlots data from the server
-    fetch('/.netlify/functions/get-available-time-slots')
+    fetch('/availableTimeSlots.json')
         .then(response => response.json())
         .then(data => {
             const availableTimeSlots = data;
