@@ -76,7 +76,7 @@ function selectDate(day) {
     selectTimeSlot('');
 
     // Fetch availableTimeSlots data from the server and update time slots
-    fetch('/get-available-time-slots')
+    fetch('./availableTimeSlots.json')
         .then(response => response.json())
         .then(data => {
             generateTimeSlots(data);
