@@ -116,29 +116,29 @@ app.post('/update-time-slots', function (req, res) {
     }
 });
 
-// app.get('/get-available-time-slots', function (req, res) {
-//     // Read the JSON file
-//     fs.readFile(availableTimeSlotsFile, 'utf8', function (err, data) {
-//         if (err) {
-//             console.error('Error reading availableTimeSlots.json:', err);
-//             return res.status(500).json({ error: 'Internal Server Error' });
-//         }
+app.get('/get-available-time-slots', function (req, res) {
+    // Read the JSON file
+    fs.readFile(availableTimeSlotsFile, 'utf8', function (err, data) {
+        if (err) {
+            console.error('Error reading availableTimeSlots.json:', err);
+            return res.status(500).json({ error: 'Internal Server Error' });
+        }
 
-//         try {
-//             // Parse the JSON data
-//             const availableTimeSlots = JSON.parse(data);
+        try {
+            // Parse the JSON data
+            const availableTimeSlots = JSON.parse(data);
 
-//             // Log the contents to the console
-//             console.log('availableTimeSlots:', availableTimeSlots);
+            // Log the contents to the console
+            console.log('availableTimeSlots:', availableTimeSlots);
 
-//             // Send the data to the client
-//             res.json(availableTimeSlots);
-//         } catch (parseError) {
-//             console.error('Error parsing availableTimeSlots.json:', parseError);
-//             res.status(500).json({ error: 'Internal Server Error' });
-//         }
-//     });
-// });
+            // Send the data to the client
+            res.json(availableTimeSlots);
+        } catch (parseError) {
+            console.error('Error parsing availableTimeSlots.json:', parseError);
+            res.status(500).json({ error: 'Internal Server Error' });
+        }
+    });
+});
 
 const server = app.listen(5000, function () {
     console.log('Node server is running..');
