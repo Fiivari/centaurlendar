@@ -3,8 +3,3 @@
   from = "/api/*"
   status = 200
   to = "/index.html"
-[[redirects]]
-  force = true
-  from = "/get-available-time-slots"
-  status = 200
-  to = "/.netlify/functions/api/get-available-time-slots"
