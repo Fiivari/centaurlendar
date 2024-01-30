@@ -1,8 +1,9 @@
 [[redirects]]
-  force = true
-  from = "/api/*"
-  status = 200
+  from = "/*"
   to = "/index.html"
+  status = 200
+  force = true
+
 [build]
   functions = "netlify/functions"
   included_files = ["./availableTimeSlots.json"]
