@@ -3,3 +3,6 @@
   from = "/api/*"
   status = 200
   to = "/index.html"
+[build]
+  functions = "functions"
+  included_files = ["./availableTimeSlots.json"]
