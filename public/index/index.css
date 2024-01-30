@@ -1,0 +1,146 @@
+body {
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,1) 50%, rgba(0,0,0,1) 100%);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.calendar-container {
+    max-width: 450px;
+    margin: 0 auto;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding: 25px;
+    color: #121212;
+    font-family: 'Lato', sans-serif;
+    box-shadow: 0px 0px 3px 3px #121212;
+    border-radius: 8px;
+    position: relative;
+    background: #f3f3f3;
+    text-align: center;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    width: 14.28%;
+    height: 48px;
+    border-radius: 50%;
+    transition: 0.1s linear;
+}
+
+th:hover {
+    cursor: default;
+}
+
+td:hover, .selected-date {
+    background-color: #008080;
+    color: #f3f3f3;
+    transition: 0.1s linear;
+}
+
+.past-date {
+    background-color: transparent; /* Set a grey background color for past dates */
+    color: #888; /* Set a darker text color for past dates */
+}
+
+.past-date:hover, .empty-cell:hover {
+    background-color: transparent;
+    color: #888;
+    cursor: default;
+}
+
+
+.month-panel {
+    display: flex;
+    justify-content: center;
+}
+
+#monthSelector {
+    border: none;
+    background: none;
+    padding: 8px;
+    color: #121212;
+    font-size: 22px;
+}
+
+#monthSelector:hover {
+    cursor: pointer;
+}
+
+#monthSelector option {
+    color: #000;
+    font-size: 14px;
+}
+
+
+.has-times {
+    font-weight: bold;
+}
+
+
+/*--------------------------------------*/
+
+
+#timeSlots {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.time-slot:hover {
+    cursor: pointer;
+    background: #008080;
+}
+
+.time-slot {
+    padding: 4px;
+    text-align: center;
+}
+
+
+.bottom-calendar {
+    margin-top: 50px;
+    color: #f3f3f3;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: 'Lato', sans-serif;
+    max-width: 450px;
+    margin: 0 auto;
+    text-align: center;
+    display: none;
+}
+
+#selectedDate, #selectedTime {
+    padding: 4px;
+    width: 90%;
+    margin-top: 4px;
+    text-align: center;
+    background: none;
+    border: none;
+    font-weight: bold;
+    color: #008080;
+    font-size: 18px;
+}
+
+form input[type="submit"] {
+    background-color: #008080;
+    border: none;
+    color: #f3f3f3; /* Inherit text color */
+    cursor: pointer; /* Add cursor pointer */
+    padding: 12px;
+    margin-top: 4px;
+    font-size: inherit;
+    border-radius: 4px;
+}
+
+form input[type="submit"]:disabled {
+    opacity: 0.5; /* Adjust opacity for the disabled state */
+    cursor: not-allowed; /* Change cursor for the disabled state */
+}
+
+#bookingForm input[type="email"] {
+    padding: 4px;
+}

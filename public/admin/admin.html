@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centaurlendar Admin</title>
+    <link rel="stylesheet" type="text/css" href="/admin/admin.css">
+</head>
+<body>
+    <h1 id="admin-id">Admin</h1>
+
+    <form id="admin-form" action="http://niocell:RapuKeittoJuhlat@localhost:5000/update-time-slots" method="post">
+        <label for="selectedDate">Päivämäärä:</label>
+        <input type="text" id="selectedDate" name="selectedDate" placeholder="YYYY-MM-DD" required />
+        
+        <label for="timeSlots">Aloitusajat (piste desimaali, pilkkueroitin):</label>
+        <input type="text" id="timeSlots" name="timeSlots" placeholder="8,9,10" required />
+
+        <input type="submit" value="Lisää ajat" />
+    </form>
+</body>
+</html>

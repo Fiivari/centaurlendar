@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Centaurlendar</title>
+    <link rel="stylesheet" type="text/css" href="/index/index.css">
+</head>
+<body>
+    <div class="calendar-container">
+        <p>Tarjoamme sinulle mahdollisuuden varata maksuttoman 30 minuutin etätapaamisen, 
+            jonka aikana pohdimme yhdessä mahdollista yhteistyötä. Voimme järjestää 
+            tapaamisen puhelimitse tai Google Meet -alustalla.</p>
+        <div class="month-panel">
+            <select id="monthSelector" onchange="updateCalendar()">
+                <option value="1">Tammikuu</option>
+                <option value="2">Helmikuu</option>
+                <option value="3">Maaliskuu</option>
+                <option value="4">Huhtikuu</option>
+                <option value="5">Toukokuu</option>
+                <option value="6">Kesäkuu</option>
+                <option value="7">Heinäkuu</option>
+                <option value="8">Elokuu</option>
+                <option value="9">Syyskuu</option>
+                <option value="10">Lokakuu</option>
+                <option value="11">Marraskuu</option>
+                <option value="12">Joulukuu</option>
+            </select>
+        </div>
+
+        <label for="yearSelector" hidden>Vuosi:</label>
+        <input type="number" id="yearSelector" min="2024" value="2024" onchange="updateCalendar()" hidden>
+
+        <div id="calendar"></div>
+    </div>
+    <div class="bottom-calendar">
+        <div id="timeSlots"></div>
+
+        <form id="bookingForm" action="/submit-booking" method="post">
+            <input type="text" id="selectedDate" name="selectedDate" hidden />
+            <div class="email"><label for="email">Sähköposti</label>
+            <input type="email" id="email" name="email" pattern=".+@.+" size="30" required /></div>
+            <input type="text" id="selectedTime" name="selectedTime" autocomplete="off" required onkeypress="return false;" />
+            <input type="submit" value="Varaa aika" />
+        </form>
+    </div>
+    <script src="/index/index.js"></script>
+</body>
+</html>
