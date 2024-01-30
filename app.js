@@ -8,7 +8,7 @@ require('dotenv').config();
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.resolve(__dirname, 'public')));
+app.use(express.static(path.resolve(__dirname)));
 
 const adminCredentials = { 
     username: process.env.ADMIN_USERNAME, 
@@ -24,7 +24,7 @@ const authMiddleware = (req, res, next) => {
     }
   
     return next();
-  };
+};
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -50,7 +50,7 @@ try {
 }
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'public', 'index', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.post('/submit-booking', function (req, res) {
@@ -96,7 +96,7 @@ app.post('/submit-booking', function (req, res) {
 app.use('/admin', authMiddleware);
 
 app.get('/admin', authMiddleware, function (req, res) {
-    res.sendFile(path.join(__dirname, 'public', 'admin', 'admin.html'));
+    res.sendFile(path.join(__dirname, 'admin.html'));
 });
 
 app.post('/update-time-slots', function (req, res) {

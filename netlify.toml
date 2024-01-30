@@ -2,4 +2,4 @@
   force = true
   from = "/api/*"
   status = 200
-  to = "/index/index.html"
+  to = "/index.html"
