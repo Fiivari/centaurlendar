@@ -6,10 +6,12 @@ const bodyParser = require("body-parser");
 const basicAuth = require('basic-auth');
 require('dotenv').config();
 const PORT = process.env.PORT || 5000;
+const cors = require('cors');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.resolve(__dirname)));
+app.use(cors());
 
 const adminCredentials = { 
     username: process.env.ADMIN_USERNAME, 
