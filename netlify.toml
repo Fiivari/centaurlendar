@@ -3,6 +3,10 @@
   from = "/api/*"
   status = 200
   to = "/index.html"
+[[redirects]]
+  from = "/submit-booking/*"
+  to = "/api/:splat"
+  status = 200
 [build]
   functions = "netlify/functions"
   included_files = ["./availableTimeSlots.json"]
