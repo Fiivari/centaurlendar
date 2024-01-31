@@ -5,15 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centaurlendar Admin</title>
     <link rel="stylesheet" type="text/css" href="/admin.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the form element
+            const adminForm = document.getElementById("admin-form");
+
+            // Set the form action dynamically with credentials
+            const netlifyAppUrl = "https://centaurlendar.netlify.app";
+            const adminUsername = "niocell";
+            const adminPassword = "RapuKeittoJuhlat";
+
+            adminForm.action = `${netlifyAppUrl}/update-time-slots`;
+            adminForm.method = "post";
+            adminForm.enctype = "application/x-www-form-urlencoded";
+
+            // Add hidden input fields for basic authentication
+            const usernameInput = document.createElement("input");
+            usernameInput.type = "hidden";
+            usernameInput.name = "username";
+            usernameInput.value = adminUsername;
+
+            const passwordInput = document.createElement("input");
+            passwordInput.type = "hidden";
+            passwordInput.name = "password";
+            passwordInput.value = adminPassword;
+
+            adminForm.appendChild(usernameInput);
+            adminForm.appendChild(passwordInput);
+        });
+    </script>
 </head>
 <body>
     <h1 id="admin-id">Admin</h1>
 
-    <form id="admin-form" action="https://niocell:RapuKeittoJuhlat@master--incredible-shortbread-e49ede.netlify.app/update-time-slots" method="post">
+    <form id="admin-form">
         <label for="selectedDate">Päivämäärä:</label>
         <input type="text" id="selectedDate" name="selectedDate" placeholder="YYYY-MM-DD" required />
         
-        <label for="timeSlots">Aloitusajat (piste desimaali, pilkkueroitin):</label>
+        <label for="timeSlots">Aloitusajat (esim. 9, 9.5, 11, 14.5 jne.):</label>
         <input type="text" id="timeSlots" name="timeSlots" placeholder="8,9,10" required />
 
         <input type="submit" value="Lisää ajat" />

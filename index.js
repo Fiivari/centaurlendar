@@ -147,7 +147,7 @@ document.querySelector('#bookingForm').addEventListener('submit', function(event
     const selectedTime = document.querySelector('#selectedTime');
     const userEmail = document.querySelector('#email').value;
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', '/submit-booking');
+    xhr.open('POST', 'https://centaurlendar.netlify.app/submit-booking');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
         if (xhr.status === 200) {

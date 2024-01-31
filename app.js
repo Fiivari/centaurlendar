@@ -5,6 +5,7 @@ const nodemailer = require('nodemailer');
 const bodyParser = require("body-parser");
 const basicAuth = require('basic-auth');
 require('dotenv').config();
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -140,6 +141,6 @@ app.get('/get-available-time-slots', function (req, res) {
     });
 });
 
-const server = app.listen(5000, function () {
+const server = app.listen(PORT, function () {
     console.log('Node server is running..');
 });
